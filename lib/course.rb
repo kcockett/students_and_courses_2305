@@ -8,7 +8,7 @@ class Course
     end
 
     def full?
-        students.size >= capacity
+        @students.size >= @capacity
     end
 
     def enroll(student)
