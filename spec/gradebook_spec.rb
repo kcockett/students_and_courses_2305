@@ -59,4 +59,26 @@ RSpec.describe Gradebook do
             expect(gradebook.students_below_threshold(80)).to eq([student2, student3])
         end
     end
+    describe '#all_grades' do
+        it 'returns hash showing all grades for all courses in gradebook' do
+            gradebook = Gradebook.new
+            course1 = Course.new("Calculus", 2)
+            course2 = Course.new("Ruby", 2)
+            gradebook.add_course(course1)
+            gradebook.add_course(course2)
+            student1 = Student.new({name: "Morgan", age: 21})
+            student2 = Student.new({name: "Jordan", age: 29})
+            student3 = Student.new({name: "Keegan", age: 24})
+            course1.enroll(student1)
+            course1.enroll(student2)
+            course2.enroll(student3)
+            student1.log_score(79)
+            student1.log_score(89) # Multiple scores for student1
+            student2.log_score(78)  
+            student3.log_score(64)
+            student3.log_score(60) # Multiple scores for student3
+
+            expect(gradebook.all_grades.first).to have_key(course1)
+        end
+    end
 end
