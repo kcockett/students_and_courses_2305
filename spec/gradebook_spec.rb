@@ -49,9 +49,11 @@ RSpec.describe Gradebook do
             course1.enroll(student1)
             course1.enroll(student2)
             course2.enroll(student3)
-            student1.log_score(89)
-            student2.log_score(78)
+            student1.log_score(79)
+            student1.log_score(89) # Multiple scores for student1
+            student2.log_score(78)  
             student3.log_score(64)
+            student3.log_score(60) # Multiple scores for student3
 
             expect(gradebook.students_below_threshold(70)).to eq([student3])
             expect(gradebook.students_below_threshold(80)).to eq([student2, student3])

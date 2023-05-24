@@ -17,4 +17,8 @@ class Gradebook
         end
         output
     end
+
+    def students_below_threshold(threshold)
+        output = []
+    end
 end
