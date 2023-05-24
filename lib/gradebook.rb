@@ -27,4 +27,16 @@ class Gradebook
         end
         output
     end
+
+    def all_grades
+        output = {}
+        value = []
+        @courses.each do |course| # iterate through all courses
+            course.students.each do |student| #iterate through all students
+                value << student.grade
+            end
+            output[course] = value
+        end
+        output
+    end
 end

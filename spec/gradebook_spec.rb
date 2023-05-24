@@ -77,7 +77,7 @@ RSpec.describe Gradebook do
             student2.log_score(78)  
             student3.log_score(64)
             student3.log_score(60) # Multiple scores for student3
-
+            require 'pry'; binding.pry
             expect(gradebook.all_grades.first).to have_key(course1)
         end
     end
