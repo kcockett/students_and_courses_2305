@@ -24,6 +24,8 @@ RSpec.describe Gradebook do
             gradebook = Gradebook.new
             course1 = Course.new("Calculus", 2)
             course2 = Course.new("Ruby", 2)
+            gradebook.add_course(course1)
+            gradebook.add_course(course2)
             student1 = Student.new({name: "Morgan", age: 21})
             student2 = Student.new({name: "Jordan", age: 29})
             student3 = Student.new({name: "Keegan", age: 24})

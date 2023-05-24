@@ -9,4 +9,12 @@ class Gradebook
     def add_course(course)
         @courses << course
     end
+
+    def list_all_students
+        output = {}
+        @courses.each do |course|
+            output[course] = course.students
+        end
+        output
+    end
 end
