@@ -11,4 +11,12 @@ RSpec.describe Gradebook do
             expect(gradebook.courses).to eq([])
         end
     end
+    describe '#add_course' do
+        it 'adds a course object to courses array' do
+            gradebook = Gradebook.new
+            course = Course.new("Calculus", 2)
+
+            expect(gradebook.add_course(course)).to eq([course])
+        end
+    end
 end
