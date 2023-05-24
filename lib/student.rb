@@ -12,11 +12,8 @@ class Student
     end
 
     def grade
-        @output = 0.0
         if @scores.size > 0
-            #require 'pry'; binding.pry
-            @output = (@scores.sum.to_f) / (@scores.size.to_f)
-            #require 'pry'; binding.pry
+            output = (@scores.sum.to_f) / (@scores.size.to_f)
         else
             #p "No scores to grade"
             0

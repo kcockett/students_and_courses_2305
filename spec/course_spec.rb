@@ -18,4 +18,7 @@ RSpec.describe Course do
             expect(course.full?).to eq(false)
         end
     end
+    describe '#enroll to add students to a course' do
+        
+    end
 end
